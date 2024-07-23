@@ -12,7 +12,7 @@ license = {text = "MIT"}
 
 
 [project.scripts]
-cli = 'my_history.cli:cnt'
+search = 'my_history.cli:cnt'
 
 [tool.pdm]
-distribution = True
+distribution = true
