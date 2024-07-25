@@ -21,7 +21,7 @@ def argp():
         parser.print_help()
 
 def cnt(q):
-    df = pd.read_parquet("~/data/parquet")
+    df = read_parquet("~/data/parquet")
     fdf = df[df['dt'] == q]
     cnt = fdf['cnt'].sum()
     print(f'{q} 사용 횟수는 {cnt}회 입니다.')
