@@ -1,6 +1,7 @@
 import pandas as pd
 import argparse
 import sys
+from my_history.db.utils import count, top
 
 def hello_msg():
     return "hello"
