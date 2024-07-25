@@ -22,3 +22,7 @@ test = [
     "pytest>=8.3.1",
     "pytest-cov>=5.0.0",
 ]
+
+[project.urls]
+Homepage = https://github.com/Nicou11/my_history
+Issues = https://github.com/Nicou11/my_history/issues
