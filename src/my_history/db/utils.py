@@ -10,7 +10,8 @@ def top(n, date):
     sdf = fdf.sort_values(by='cnt', ascending=False).head(n)
     ddf = sdf.drop(columns=['dt'])
 
-    r = ddf.to_string(index=False)
+    r = ddf.to_s
+    tring(index=False)
     return r
 
 def count(query):
