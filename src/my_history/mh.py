@@ -1,15 +1,15 @@
 import pandas as pd
 import sys
 import argparse
+from tabulate import tabulate
 
-#INPUT = sys.argv[1]
 
 def argp():
     parser = argparse.ArgumentParser()
-    group = parser.add_mutually_exclusive_group()
-    group.add_argument("-c", "--count", type=str, action="store_true", help="mh -c <cmd>")
-    group.add_argument("-t", "--top", type=int,action="store_true", help="mh -t <num>")
-    group.add_argument("-d", "--date", type=str,action="store_true", help="mh -d <date>")
+    group = parser.add_argument_group()
+    group.add_argument("-c", "--count", type=str, help="mh -c <cmd>")
+    group.add_argument("-t", "--top", type=int, help="mh -t <num>")
+    group.add_argument("-d", "--date", type=str, help="mh -d <date>")
 
     args = parser.parse_args()
     
@@ -30,9 +30,9 @@ def top(n, date):
     df = read_parquet("~/data/parquet")
     fdf = df[df['dt'] == date]
     sdf = fdf.sort_values(by='cnt', ascending=False).head(n)
-    ddf = sdf.drop(columns=['dt']).to_string(index=False)
-    print(ddf)
+    ddf = sdf.drop(columns=['dt'])
+    print(tabulate(ddf, tablefmt="pipe", headers=["", "cmd", "cnt"]))
 
-def read_parquet(path="~/tmp/history.parquet"):
+def read_parquet(path="~/data/parquet"):
     df = pd.read_parquet(path)
     return df
