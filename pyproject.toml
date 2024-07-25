@@ -1,6 +1,6 @@
 [project]
 name = "my_history"
-version = "0.1.0"
+version = "0.2.0"
 description = "Default template for PDM package"
 authors = [
     {name = "Nicou11", email = "lyoungin1204@gmail.com"},
@@ -12,7 +12,7 @@ license = {text = "MIT"}
 
 
 [project.scripts]
-search = 'my_history.cli:cnt'
+search = 'my_history.cli:query'
 
 [tool.pdm]
 distribution = true
