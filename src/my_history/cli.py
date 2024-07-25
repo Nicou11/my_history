@@ -13,15 +13,18 @@ def sort(n, date):
     ddf = sdf.drop(columns=['dt'])
     print(ddf.to_string(index=False))
 
+
 def cnt(q): 
     df = read_parquet()
     fdf = df[df['cmd'].str.contains(q)]
     cnt = fdf['cnt'].sum()
     return cnt
 
+
 def read_parquet(path="~/tmp/history.parquet"):
     df = pd.read_parquet(path)
     return df
+
 
 def query():
     q = sys.argv[1]

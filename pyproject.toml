@@ -12,7 +12,7 @@ license = {text = "MIT"}
 
 
 [project.scripts]
-search = 'my_history.cli:query'
+my-h = 'my_history.cli:argp'
 
 [tool.pdm]
 distribution = true
