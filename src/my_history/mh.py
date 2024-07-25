@@ -22,7 +22,7 @@ def argp():
 
 def cnt(q):
     df = read_parquet("~/data/parquet")
-    fdf = df[df['dt'] == q]
+    fdf = df[df['cmd'] == q]
     cnt = fdf['cnt'].sum()
     print(f'{q} 사용 횟수는 {cnt}회 입니다.')
 
