@@ -1,9 +1,8 @@
 # my_history
+- parquet 파일의 정보를 cli 기반으로 조회
 
-## Require
+### Require
 ```
-[ ] 아래와 같은 사용법의 프로그램을 만들자
-[ ] 사용법을 작성하자
 $ my-history -s ls
 ls 사용 횟수는 1234회 입니다.
 
@@ -20,11 +19,21 @@ mkdir 1932
   pdm 1220
    rm 1104
 ```
-
-## Usage
+### Dev env setting
 ```
-$ search <검색할 단어>
+$ git clone <URL>
+$ cd <PJT_NAME>
+$ pdm install
+$ [pdm test|pytest]
+
+# option 
+$ pdm add -dG test pytest pytest-cov
 ```
 
-## Result
+
+### Result
 ![image](https://github.com/user-attachments/assets/de719535-7228-4380-8ecf-b937d51d57a2)
+
+### Ref
+- https://pdm-project.org/en/latest/usage/dependency/#add-development-only-dependencies
+
