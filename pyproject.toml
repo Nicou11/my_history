@@ -27,7 +27,6 @@ pythonpath = [
 
 [project.scripts]
 my-history = 'my_history.hello:cmd'
-my-h = 'my_history.mh:argp'
 
 [tool.pdm.scripts]
 test = "pytest"
