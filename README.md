@@ -23,8 +23,14 @@ mkdir 1932
 ```
 $ git clone <URL>
 $ cd <PJT_NAME>
+$ pyenv virtualenv 3.11.9 clean 
+$ pyenv global clean 
+$ rm -rf .venv
+$ pdm venv create
+$ source .venv/bin/activate
 $ pdm install
-$ [pdm test|pytest]
+$ pdm list
+$ pytest
 
 # option 
 $ pdm add -dG test pytest pytest-cov
