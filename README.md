@@ -29,7 +29,14 @@ $ [pdm test|pytest]
 # option 
 $ pdm add -dG test pytest pytest-cov
 ```
+### Deploy
+```bash
+# dev branch
+$ pip install git+https://github.com/Nicou11/my_history.git@0.2.0/args
 
+# main
+$ pip install git+https://github.com/Nicou11/my_history.git@main
+```
 
 ### Result
 ![image](https://github.com/user-attachments/assets/de719535-7228-4380-8ecf-b937d51d57a2)
