@@ -1,21 +1,25 @@
 import pandas as pd
+from tabulate import tabulate
 
 def read_data(path="~/data/parquet"):
     df = pd.read_parquet(path)
     return df
 
-def top(n, date):
+def top(cnt, dt, pretty=False):
     df = read_data()
-    fdf = df[df['dt'] == date]
-    sdf = fdf.sort_values(by='cnt', ascending=False).head(n)
+    fdf = df[df['dt'] == dt]
+    sdf = fdf.sort_values(by='cnt', ascending=False).head(cnt)
     ddf = sdf.drop(columns=['dt'])
 
-    r = ddf.to_s
-    tring(index=False)
-    return r
+    if pretty:
+        return tabulate(ddf,
+                 headers=['cmd', 'cnt'], tablefmt='pipe')
+    else:
+        return ddf.to_string(index=False)
+
 
 def count(query):
     df = read_data()
-    fdf = df[df['cmd'] == query]
+    fdf = df[df['cmd'].str.contains(query)]
     cnt = fdf['cnt'].sum()
-    print(f'{q} 사용 횟수는 {cnt}회 입니다.')
+    return cnt
